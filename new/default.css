@@ -442,17 +442,21 @@ div.form__alert {
 /* -----------------------------------------------------------------------------*/
 
 .lead { 
-  background-image: url(img/valley.jpg);
-  background-position: 50%;
-  background-size: cover;
-  padding: 4rem 1rem; }
+  height: 500px;
+  overflow: hidden; }
 
 .lead__content { 
-  max-width: 650px;
-  text-align: center;
+  min-height: 500px;
+  background-position: 50%;
+  background-size: cover;
+  padding: 1rem; }
+
+.lead__content__text { 
+  width: 90%;
+  max-width: 500px;
+  text-align: left;
   background-color: #fff;
   padding: 2rem 1rem;
-  margin: 0 auto;
   border-radius: 2px;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.5); }
 
@@ -465,10 +469,9 @@ div.form__alert {
   font-size: 1.5rem;
   font-weight: 800; }
 
-.lead__content__text div:nth-of-type(3) {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: .5rem 0 1rem; }
+.lead__content__text p {
+  font-size: 1.25rem;
+  font-weight: 600; }
 
 .lead__content__text div:nth-of-type(4) { 
   font-weight: 800; }
@@ -479,14 +482,11 @@ div.form__alert {
 
 @media only screen and (min-width: 40em ) {
 
-  .lead__content { 
-    padding: 2rem; }
-
-  .lead__content__text div:nth-of-type(4) { 
-    font-size: 1.25rem; }
-
-  .lead__content__text div:nth-of-type(4) span {
-    display: inherit; }
+ .lead__content__text { 
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    transform: translate(0, -50%); }
 
 }
 
@@ -504,22 +504,52 @@ div.form__alert {
   border-bottom: 1px solid #ccc; }
 
 .service {
-  max-width: 650px; 
   margin: 0 auto 4rem; }
+
+.service:before { 
+  content: "";
+  width: 90px;
+  height: 90px;
+  background-size: cover;
+  background-position: 50%;
+  display: block;
+  margin: 0 auto 10px; }
+
+.service--assessments:before {
+  background-image: url(img/icon--assessments.png); }
+
+.service--weather:before {
+  background-image: url(img/icon--weather.png); }
+
+.service--insulation:before {
+  background-image: url(img/icon--truck.png); }
+
+.service--more:before {
+  background-image: url(img/icon--bulb.png); }
 
 .service__title { 
   color: #7fb438;
   font-size: 1.5rem;
-  font-weight: 800; }
+  font-weight: 800;
+  text-align: center; }
 
 .service__text { 
   font-size: 1.15rem; }
 
 @media only screen and (min-width: 40em ) {
+  .service {
+    padding: 0 0 0 120px; }
+
+  .service:before { 
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0; }
 
   .service__title { 
     font-size: 1.75rem;
-  }
+    text-align: left;  }
 
 }
 /* -----------------------------------------------------------------------------*/
@@ -535,10 +565,26 @@ div.form__alert {
   max-width: 600px;
   margin: 0 auto 3rem; }
 
-.accolade img {
-  max-width: 150px;
-  vertical-align: middle; } 
+.accolade { 
+  width: 100%;
+  height: 100px;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;}
 
+.accolade--masssave { 
+  background-image: url(img/brand--masssave.png); }
+
+.accolade--yelp { 
+  background-image: url(img/brand--yelp.png); }
+
+.accolade--bpi { 
+  background-image: url(img/brand--bpi.png); }
+
+.accolade--bbb { 
+  background-image: url(img/brand--bbb.png); }
 
 /* -----------------------------------------------------------------------------*/
 /* /// LOCATIONS                                                                */
@@ -555,7 +601,7 @@ div.form__alert {
   text-align: center; }
 
 .locations .description { 
-  max-width: 500px;
+  max-width: 650px;
   margin: 0 auto 2.5rem; }
 
 .location li {
@@ -619,12 +665,14 @@ div.form__alert {
   display: block;
   overflow: hidden;
   height: 100%;
-  width: 100%;
+  width: 100%; }
+
+.royalSlider .rsSlide { 
   opacity: 0.8;
   transform: scale(0.8);
   transition: transform 500ms ease, opacity 500ms ease; }
 
-.rsSlide.rsActiveSlide {
+.royalSlider .rsSlide.rsActiveSlide {
   opacity: 1;
   transform: scale(1); }
 
@@ -636,7 +684,7 @@ div.form__alert {
   height: 100%;
   position: relative; }
 
-img.rsImg { 
+.royalSlider img.rsImg { 
   max-width: none; }
 
 /* -----------------------------------------------------------------------------*/
